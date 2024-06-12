@@ -37,7 +37,7 @@ resource "aws_security_group" "allow_ssh" {
 resource "aws_instance" "ubuntu_machine" {
   ami           = "ami-04b70fa74e45c3917"
   instance_type = "t2.micro"
-  subnet_id     = aws_subnet.mysubnet.id
+  subnet_id     = var.subnet_id
   vpc_security_group_ids = [
     aws_security_group.allow_ssh.id,
   ]
