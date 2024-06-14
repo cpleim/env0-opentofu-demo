@@ -1,3 +1,13 @@
+terraform {
+  backend "remote" {
+    hostname     = "backend.api.env0.com"
+    organization = "b89512f2-4b52-46bf-b3ef-c0f7c1ae0e6a"
+    workspaces {
+      name = "poc"
+    }
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
